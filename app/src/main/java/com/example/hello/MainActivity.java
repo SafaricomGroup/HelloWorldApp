@@ -62,7 +62,7 @@ double la = 0;
 double lo = 0;
 boolean isInitialized = false; 
 int a=0;
-double NOISE_THRESHOLD_KM = 0; 
+double NOISE_THRESHOLD_KM = 1; 
    
 
 StringBuilder st = new StringBuilder();
@@ -104,7 +104,7 @@ StringBuilder st = new StringBuilder();
         );
         hparams.leftToLeft = ConstraintLayout.LayoutParams.PARENT_ID;
         hparams.topToTop = ConstraintLayout.LayoutParams.PARENT_ID;
-        hparams.topMargin = 130;
+        hparams.topMargin = 135;
         hparams.leftMargin = 100;
 
      hparams.bottomMargin = 50;
@@ -124,7 +124,7 @@ StringBuilder st = new StringBuilder();
         );
         kparams.leftToLeft = ConstraintLayout.LayoutParams.PARENT_ID;
         kparams.topToTop = ConstraintLayout.LayoutParams.PARENT_ID;
-        kparams.topMargin = 90;
+        kparams.topMargin = 95;
         kparams.leftMargin = 100;
 
      kparams.bottomMargin = 50;
@@ -191,21 +191,21 @@ String distanceaa = String.format("%.3f", distancea);
 String distancecc= String.format("%.3f", distancec);
   
 
-      if (distancec >= NOISE_THRESHOLD_KM || a==1) {
+      if (distancec >= NOISE_THRESHOLD_Km) {
  st.setLength(0);
-   if ((lat -fixedla) >=0){
+   if ((lat -fixedla) >=0.5){
         st.append("NORTH");
     } 
 
-   else if ((lat -fixedla) <=-0){
+   else if ((lat -fixedla) <=-0.5){
         st.append("SOUTH");  
     }
     
-    if ((lon - fixedlo)>=0){
+    if ((lon - fixedlo)>=0.5){
         st.append("EAST");
     } 
 
-     else if( (lon -fixedlo)<= -0){
+     else if( (lon -fixedlo)<= -0.5){
         st.append("WEST");
     }
     
@@ -216,17 +216,17 @@ String distancecc= String.format("%.3f", distancec);
 
   if (distancea >= NOISE_THRESHOLD_KM ) {
  st.setLength(0);
-     if ((lat -la)>=0) {
+     if ((lat -la)>=0.5) {
         st.append("NORTH");
     } 
-    else if( (lat-la) <= -0){
+    else if( (lat-la) <= -0.5){
         st.append("SOUTH");  
     }
     
-    if ((lon - lo) >=0){
+    if ((lon - lo) >=0.5){
         st.append("EAST");
     } 
-    else if ( (lon -lo) <= -0) {                     
+    else if ( (lon -lo) <= -0.5) {   
         st.append("WEST");
     }
     
