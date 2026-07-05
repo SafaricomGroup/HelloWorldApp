@@ -62,7 +62,7 @@ double la = 0;
 double lo = 0;
 boolean isInitialized = false; 
 int a=0;
-double NOISE_THRESHOLD_KM = 1; 
+double NOISE_THRESHOLD_KM = 0; 
    
 
 StringBuilder st = new StringBuilder();
