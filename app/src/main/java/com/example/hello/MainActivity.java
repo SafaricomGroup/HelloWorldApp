@@ -191,21 +191,21 @@ String distanceaa = String.format("%.3f", distancea);
 String distancecc= String.format("%.3f", distancec);
   
 
-      if (distancec >= NOISE_THRESHOLD_Km) {
+      if (distancec >= NOISE_THRESHOLD_KM) {
  st.setLength(0);
-   if ((lat -fixedla) >=0.5){
+   if ((lat -fixedla) >=0){
         st.append("NORTH");
     } 
 
-   else if ((lat -fixedla) <=-0.5){
+   else if ((lat -fixedla) <=-0){
         st.append("SOUTH");  
     }
     
-    if ((lon - fixedlo)>=0.5){
+    if ((lon - fixedlo)>=0){
         st.append("EAST");
     } 
 
-     else if( (lon -fixedlo)<= -0.5){
+     else if( (lon -fixedlo)<= -0){
         st.append("WEST");
     }
     
@@ -216,17 +216,17 @@ String distancecc= String.format("%.3f", distancec);
 
   if (distancea >= NOISE_THRESHOLD_KM ) {
  st.setLength(0);
-     if ((lat -la)>=0.5) {
+     if ((lat -la)>=0) {
         st.append("NORTH");
     } 
-    else if( (lat-la) <= -0.5){
+    else if( (lat-la) <= -0){
         st.append("SOUTH");  
     }
     
-    if ((lon - lo) >=0.5){
+    if ((lon - lo) >=0){
         st.append("EAST");
     } 
-    else if ( (lon -lo) <= -0.5) {   
+    else if ( (lon -lo) <= -0) {   
         st.append("WEST");
     }
     
