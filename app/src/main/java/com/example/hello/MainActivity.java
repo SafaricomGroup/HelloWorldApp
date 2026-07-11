@@ -62,7 +62,7 @@ double la = 0;
 double lo = 0;
 boolean isInitialized = false; 
 int a=0;
-double NOISE_THRESHOLD_KM = 0; 
+double NOISE_THRESHOLD_KM = 1; 
    
 
 StringBuilder st = new StringBuilder();
@@ -193,19 +193,19 @@ String distancecc= String.format("%.3f", distancec);
 
       if (distancec >= NOISE_THRESHOLD_KM) {
  st.setLength(0);
-   if ((lat -fixedla) >=0){
+   if ((lat -fixedla) >=0.5){
         st.append("NORTH");
     } 
 
-   else if ((lat -fixedla) <=-0){
+   else if ((lat -fixedla) <=-0.5){
         st.append("SOUTH");  
     }
     
-    if ((lon - fixedlo)>=0){
+    if ((lon - fixedlo)>=0.5){
         st.append("EAST");
     } 
 
-     else if( (lon -fixedlo)<= -0){
+     else if( (lon -fixedlo)<= -0.5){
         st.append("WEST");
     }
     
@@ -216,17 +216,17 @@ String distancecc= String.format("%.3f", distancec);
 
   if (distancea >= NOISE_THRESHOLD_KM ) {
  st.setLength(0);
-     if ((lat -la)>=0) {
+     if ((lat -la)>=0.5) {
         st.append("NORTH");
     } 
-    else if( (lat-la) <= -0){
+    else if( (lat-la) <= -0.5){
         st.append("SOUTH");  
     }
     
-    if ((lon - lo) >=0){
+    if ((lon - lo) >=0.5){
         st.append("EAST");
     } 
-    else if ( (lon -lo) <= -0) {   
+    else if ( (lon -lo) <= -0.5) {   
         st.append("WEST");
     }
     
